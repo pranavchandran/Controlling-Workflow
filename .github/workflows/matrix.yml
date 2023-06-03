@@ -4,9 +4,9 @@ jobs:
   build:
     continue-on-error: true
     strategy:
-        matrix:
-            node-version: [14, 15]
-            operating-system: [ubuntu-latest, windows-latest]
+      matrix:
+        node-version: [14, 15]
+        operating-system: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Get code
@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-        run: npm ci
       - name: Build website
+        run: npm ci
+      - name: Run build command
         run: npm run build
