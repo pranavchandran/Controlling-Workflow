@@ -1,0 +1,8 @@
+name: Reusable Deploy
+on: workflow_call
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output information
+        run: echo "The workflow was triggered by ${{ github.actor }} via a ${{ github.event_name }} event."
