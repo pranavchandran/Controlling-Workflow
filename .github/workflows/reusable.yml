@@ -10,7 +10,6 @@ on:
     outputs:
       result:
         description: 'The result of the deployment workflow'
-        type: string
         value: 'Deployment succeeded'
     # secrets:
       # some-secret:
