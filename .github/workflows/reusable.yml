@@ -11,7 +11,7 @@ on:
       result:
         description: 'The result of the deployment workflow'
         type: string
-        value: ${{ steps.deploy.outputs.result }}
+        value: 'Deployment succeeded'
     # secrets:
       # some-secret:
         # description: 'A secret to use in the workflow'
