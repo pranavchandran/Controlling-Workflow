@@ -29,4 +29,6 @@ jobs:
       - name: Output contents
         run: ls
       - name: Output information
-        run: echo "::set-output name=result::Deployment succeeded"
+        run: echo 'Deployment succeeded'
+        id: deploy
+        continue-on-error: true
