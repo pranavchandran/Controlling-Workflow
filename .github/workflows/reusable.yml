@@ -7,8 +7,20 @@ on:
         required: false
         default: 'dist-files'
         type: string
+    outputs:
+      result:
+        description: 'The result of the deployment workflow'
+        type: string
+        value: ${{ steps.deploy.outputs.result }}
+    # secrets:
+      # some-secret:
+        # description: 'A secret to use in the workflow'
+        # required: false
 jobs:
   deploy:
+    outputs:
+      result: ${{ steps.deploy.outputs.result }}
+
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -18,4 +30,4 @@ jobs:
       - name: Output contents
         run: ls
       - name: Output information
-        run: echo "The workflow was triggered by ${{ github.actor }} via a ${{ github.event_name }} event."
+        run: echo "::set-output name=result::Deployment succeeded"
